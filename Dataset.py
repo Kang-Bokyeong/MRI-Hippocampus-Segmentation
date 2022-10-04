@@ -52,12 +52,6 @@ class ImageDataset(Dataset):
 
         # 3) make train data
         for filename, image_path in image_dict.items():
-            # if filename not in seg_dict.keys():
-            #     # if self.use_none_seg and random.randint(0, 9) == 0:
-            #     #     self.samples.append((image_path, False))
-            # else:
-            #     self.samples.append((image_path, seg_dict[filename]))
-
             seg_filename = filename.replace('ACPC', 'L')
             self.samples.append((image_path, seg_dict[seg_filename]))
 
